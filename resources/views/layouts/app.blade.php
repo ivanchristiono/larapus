@@ -14,6 +14,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
    <!-- <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"> -->
     <link href="{{ asset('css/fontawesome.min.css') }}" rel="stylesheet">
+    <link href="{{asset('/css/jquery.dataTables.css')}}" rel="stylesheet">
+    <link href="{{asset('/css/dataTables.bootstrap.css')}}" rel="stylesheet">
+
 
     <!-- Scripts -->
     <script>
@@ -47,6 +50,7 @@
                     <ul class="nav navbar-nav">
                         @if (Auth::check())
                         <li><a href="{{ url('/home') }}">Dashboard</a></li>
+                        <li><a href="{{ route('authors.index') }}">Penulis</a></li>
                         @endif   
                     </ul>
 
@@ -82,13 +86,16 @@
             </div>
         </nav>
 
-        @yield('content')
+    @yield('content')
     </div>
 
     <!-- Scripts -->
-    <script src= {{ asset('/js/app.js') }}></script>
-    <script src= {{ asset('/js/jquery-3.4.1.min.js') }}></script>
-    <script src= {{ asset('/js/bootstrap.min.js') }}></script>
+    
+    <!-- <script src= "{{asset('/js/app.js')}}"></script> -->
+    <script src= "{{ asset('/js/jquery-3.4.1.min.js') }}"></script>
+    <script src= "{{ asset('/js/bootstrap.min.js') }}"></script>
+    <script src="{{asset('/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('/js/dataTables.bootstrap.min.js')}}"></script>
     @yield('scripts')
     
 </body>

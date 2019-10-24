@@ -12,10 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('authors.index');
 });
 Route::get('/about', 'MyController@showAbout');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/test', ['middleware'=>'guest', 'uses'=>'MyController@showAbout']);
+
+Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function () {
+    Route::resource('authors','AuthorsController');
+    });

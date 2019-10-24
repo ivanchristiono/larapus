@@ -29,6 +29,7 @@
     25 => 'App\\Providers\\RouteServiceProvider',
     26 => 'Collective\\Html\\HtmlServiceProvider',
     27 => 'Laratrust\\LaratrustServiceProvider',
+    28 => 'Yajra\\Datatables\\DatatablesServiceProvider',
   ),
   'eager' => 
   array (
@@ -47,6 +48,7 @@
     12 => 'App\\Providers\\EventServiceProvider',
     13 => 'App\\Providers\\RouteServiceProvider',
     14 => 'Laratrust\\LaratrustServiceProvider',
+    15 => 'Yajra\\Datatables\\DatatablesServiceProvider',
   ),
   'deferred' => 
   array (

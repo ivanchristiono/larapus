@@ -184,6 +184,9 @@ return [
         //laratrust
         Laratrust\LaratrustServiceProvider::class,
 
+        //Yajra Oracle DataTables 6.0
+        Yajra\Datatables\DatatablesServiceProvider::class,
+
     ],
 
     /*

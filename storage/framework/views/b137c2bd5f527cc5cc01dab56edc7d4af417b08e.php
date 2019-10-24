@@ -14,6 +14,9 @@
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
    <!-- <link href="<?php echo e(asset('css/bootstrap.min.css')); ?>" rel="stylesheet"> -->
     <link href="<?php echo e(asset('css/fontawesome.min.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('/css/jquery.dataTables.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('/css/dataTables.bootstrap.css')); ?>" rel="stylesheet">
+
 
     <!-- Scripts -->
     <script>
@@ -48,6 +51,7 @@
                     <ul class="nav navbar-nav">
                         <?php if(Auth::check()): ?>
                         <li><a href="<?php echo e(url('/home')); ?>">Dashboard</a></li>
+                        <li><a href="<?php echo e(route('authors.index')); ?>">Penulis</a></li>
                         <?php endif; ?>   
                     </ul>
 
@@ -84,13 +88,16 @@
             </div>
         </nav>
 
-        <?php echo $__env->yieldContent('content'); ?>
+    <?php echo $__env->yieldContent('content'); ?>
     </div>
 
     <!-- Scripts -->
-    <script src= <?php echo e(asset('/js/app.js')); ?>></script>
-    <script src= <?php echo e(asset('/js/jquery-3.4.1.min.js')); ?>></script>
-    <script src= <?php echo e(asset('/js/bootstrap.min.js')); ?>></script>
+    
+    <!-- <script src= "<?php echo e(asset('/js/app.js')); ?>"></script> -->
+    <script src= "<?php echo e(asset('/js/jquery-3.4.1.min.js')); ?>"></script>
+    <script src= "<?php echo e(asset('/js/bootstrap.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('/js/jquery.dataTables.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('/js/dataTables.bootstrap.min.js')); ?>"></script>
     <?php echo $__env->yieldContent('scripts'); ?>
     
 </body>
