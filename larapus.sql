@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 21, 2019 at 07:17 PM
+-- Generation Time: Oct 24, 2019 at 07:14 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -25,6 +25,54 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `authors`
+--
+
+CREATE TABLE `authors` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `authors`
+--
+
+INSERT INTO `authors` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'Mohammad Fauzil Adhim', '2019-10-24 09:14:38', '2019-10-24 09:14:38'),
+(2, 'Salim A. Fillah', '2019-10-24 09:14:38', '2019-10-24 09:14:38'),
+(3, 'Aam Amiruddin', '2019-10-24 09:14:38', '2019-10-24 09:14:38');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `books`
+--
+
+CREATE TABLE `books` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `author_id` int(10) UNSIGNED NOT NULL,
+  `amount` int(10) UNSIGNED NOT NULL,
+  `cover` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `books`
+--
+
+INSERT INTO `books` (`id`, `title`, `author_id`, `amount`, `cover`, `created_at`, `updated_at`) VALUES
+(1, 'Kupinang Engkau dengan Hamdalah', 1, 3, NULL, '2019-10-24 09:14:38', '2019-10-24 09:14:38'),
+(2, 'Jalan Cinta Para Pejuang', 2, 2, NULL, '2019-10-24 09:14:38', '2019-10-24 09:14:38'),
+(3, 'Membingkai Surga dalam Rumah Tangga', 3, 4, NULL, '2019-10-24 09:14:38', '2019-10-24 09:14:38'),
+(4, 'Cinta & Seks Rumah Tangga Muslim', 3, 3, NULL, '2019-10-24 09:14:38', '2019-10-24 09:14:38');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -39,9 +87,11 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1),
-(3, '2019_10_21_162253_laratrust_setup_tables', 2);
+(20, '2014_10_12_000000_create_users_table', 1),
+(21, '2014_10_12_100000_create_password_resets_table', 1),
+(22, '2019_10_21_162253_laratrust_setup_tables', 1),
+(23, '2019_10_24_154503_create_authors_table', 1),
+(24, '2019_10_24_154521_create_books_table', 1);
 
 -- --------------------------------------------------------
 
@@ -54,13 +104,6 @@ CREATE TABLE `password_resets` (
   `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `password_resets`
---
-
-INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
-('ivan.christiono@gmail.com', 'c12bb39cbe0d12789c09af020417db303d36092448457167cc704f2fc629f67a', '2019-10-18 11:16:51');
 
 -- --------------------------------------------------------
 
@@ -103,6 +146,14 @@ CREATE TABLE `roles` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`id`, `name`, `display_name`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'Admin', NULL, '2019-10-24 09:14:37', '2019-10-24 09:14:37'),
+(2, 'member', 'Member', NULL, '2019-10-24 09:14:37', '2019-10-24 09:14:37');
+
 -- --------------------------------------------------------
 
 --
@@ -113,6 +164,14 @@ CREATE TABLE `role_user` (
   `user_id` int(10) UNSIGNED NOT NULL,
   `role_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `role_user`
+--
+
+INSERT INTO `role_user` (`user_id`, `role_id`) VALUES
+(1, 1),
+(2, 2);
 
 -- --------------------------------------------------------
 
@@ -135,11 +194,25 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Ivan Christiono Suharnoko', 'ivan.christiono@gmail.com', '$2y$10$a6Fx7G1otjDW4O9QthYBEOXc3ry2Jm16XItNoxidZvbXnjTNZca9S', 'TBerujgawKtsT3YeQ1X1YAtQYoujwCGgyJ2rYHRga8147X2YiAyoeCEmKqSN', '2019-10-18 11:13:59', '2019-10-21 06:30:23');
+(1, 'Admin Larapus', 'admin@gmail.com', '$2y$10$g.uwq.eCfXqG2DUzzN/4NeETc3SSElecsdpOzoSzG5l4BM5EhAFJG', 'QZrC7F11bGuYgQoCTeU9OIMspIQoWwq52LuCHqrhDiWfhawNQfUMOEvoj3ut', '2019-10-24 09:14:37', '2019-10-24 09:46:41'),
+(2, 'Sample Member', 'member@gmail.com', '$2y$10$SHraRat2.q1Csbg45sVADuZp6mPByZbtPR3TnH27kZ5SaUdTtbzMy', NULL, '2019-10-24 09:14:38', '2019-10-24 09:14:38');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `authors`
+--
+ALTER TABLE `authors`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `books`
+--
+ALTER TABLE `books`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `books_author_id_foreign` (`author_id`);
 
 --
 -- Indexes for table `migrations`
@@ -194,10 +267,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `authors`
+--
+ALTER TABLE `authors`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `books`
+--
+ALTER TABLE `books`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -209,17 +294,23 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `books`
+--
+ALTER TABLE `books`
+  ADD CONSTRAINT `books_author_id_foreign` FOREIGN KEY (`author_id`) REFERENCES `authors` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `permission_role`
