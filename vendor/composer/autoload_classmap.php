@@ -2426,6 +2426,8 @@ return array(
     'Psr\\Log\\Test\\DummyTest' => $vendorDir . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
     'Psr\\Log\\Test\\LoggerInterfaceTest' => $vendorDir . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
     'Psr\\Log\\Test\\TestLogger' => $vendorDir . '/psr/log/Psr/Log/Test/TestLogger.php',
+    'Psr\\Log\\Test\\and' => $vendorDir . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
+    'Psr\\Log\\Test\\for' => $vendorDir . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
     'Psy\\Autoloader' => $vendorDir . '/psy/psysh/src/Psy/Autoloader.php',
     'Psy\\CodeCleaner' => $vendorDir . '/psy/psysh/src/Psy/CodeCleaner.php',
     'Psy\\CodeCleaner\\AbstractClassPass' => $vendorDir . '/psy/psysh/src/Psy/CodeCleaner/AbstractClassPass.php',

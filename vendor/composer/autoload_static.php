@@ -2759,6 +2759,8 @@ class ComposerStaticInit63d08ab799c1000be039a0ec7979377b
         'Psr\\Log\\Test\\DummyTest' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
         'Psr\\Log\\Test\\LoggerInterfaceTest' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
         'Psr\\Log\\Test\\TestLogger' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/TestLogger.php',
+        'Psr\\Log\\Test\\and' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
+        'Psr\\Log\\Test\\for' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
         'Psy\\Autoloader' => __DIR__ . '/..' . '/psy/psysh/src/Psy/Autoloader.php',
         'Psy\\CodeCleaner' => __DIR__ . '/..' . '/psy/psysh/src/Psy/CodeCleaner.php',
         'Psy\\CodeCleaner\\AbstractClassPass' => __DIR__ . '/..' . '/psy/psysh/src/Psy/CodeCleaner/AbstractClassPass.php',

@@ -2853,3 +2853,158 @@ Stack trace:
 #0 {main}  
 =======
 >>>>>>> 501cd1329fb6f9ba98d9b38a662743cf243dbae9
+[2019-10-26 18:22:40] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file' in F:\xampp\htdocs\larapus\routes\web.php:36
+Stack trace:
+#0 {main}  
+[2019-10-26 18:37:20] production.ERROR: exception 'RuntimeException' with message 'The only supported ciphers are AES-128-CBC and AES-256-CBC with the correct key lengths.' in F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php:13520
+Stack trace:
+#0 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(7927): Illuminate\Encryption\Encrypter->__construct(NULL, 'AES-256-CBC')
+#1 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(1477): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(1433): Illuminate\Container\Container->build(Object(Closure), Array)
+#3 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(2011): Illuminate\Container\Container->make('encrypter', Array)
+#4 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(1534): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#5 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(1511): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#6 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(1497): Illuminate\Container\Container->getDependencies(Array, Array)
+#7 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(1433): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#8 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(2011): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#9 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10064): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#10 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#11 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10054): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#12 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(8356): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#13 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(8347): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#14 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(8338): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#15 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(2575): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#16 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#17 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(3374): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10069): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10054): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(2519): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#22 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(2503): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#23 F:\xampp\htdocs\larapus\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#24 {main}  
+[2019-10-26 18:37:20] production.ERROR: exception 'RuntimeException' with message 'The only supported ciphers are AES-128-CBC and AES-256-CBC with the correct key lengths.' in F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php:13520
+Stack trace:
+#0 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(7927): Illuminate\Encryption\Encrypter->__construct(NULL, 'AES-256-CBC')
+#1 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(1477): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#2 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(1433): Illuminate\Container\Container->build(Object(Closure), Array)
+#3 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(2011): Illuminate\Container\Container->make('encrypter', Array)
+#4 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(1534): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#5 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(1511): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#6 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(1497): Illuminate\Container\Container->getDependencies(Array, Array)
+#7 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(1433): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#8 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(2011): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#9 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(2529): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#10 F:\xampp\htdocs\larapus\public\index.php(58): Illuminate\Foundation\Http\Kernel->terminate(Object(Illuminate\Http\Request), Object(Illuminate\Http\Response))
+#11 {main}  
+[2019-10-26 18:39:58] local.ERROR: exception 'ErrorException' with message 'Undefined variable: html' in F:\xampp\htdocs\larapus\storage\framework\views\223bd0350bc9f09dc2cc6d3ee492aa33fd4e56d7.php:22
+Stack trace:
+#0 F:\xampp\htdocs\larapus\storage\framework\views\223bd0350bc9f09dc2cc6d3ee492aa33fd4e56d7.php(22): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', 'F:\\xampp\\htdocs...', 22, Array)
+#1 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(15713): include('F:\\xampp\\htdocs...')
+#2 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(15750): Illuminate\View\Engines\PhpEngine->evaluatePath('F:\\xampp\\htdocs...', Array)
+#3 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(15582): Illuminate\View\Engines\CompilerEngine->get('F:\\xampp\\htdocs...', Array)
+#4 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(15570): Illuminate\View\View->getContents()
+#5 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(15554): Illuminate\View\View->renderContents()
+#6 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(16827): Illuminate\View\View->render()
+#7 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(16314): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(8509): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(8355): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#11 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10177): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#12 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10069): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#13 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#14 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(3312): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10069): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(13749): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10069): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(12155): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10069): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(13495): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10069): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(13432): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10069): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10054): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#30 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(8356): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#31 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(8347): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#32 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(8338): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#33 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(2575): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#34 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#35 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(3374): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#36 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10069): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#37 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#38 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10054): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(2519): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#40 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(2503): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#41 F:\xampp\htdocs\larapus\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#42 {main}
+
+Next exception 'ErrorException' with message 'Undefined variable: html (View: F:\xampp\htdocs\larapus\resources\views\authors\index.blade.php)' in F:\xampp\htdocs\larapus\storage\framework\views\223bd0350bc9f09dc2cc6d3ee492aa33fd4e56d7.php:22
+Stack trace:
+#0 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(15715): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(15750): Illuminate\View\Engines\PhpEngine->evaluatePath('F:\\xampp\\htdocs...', Array)
+#2 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(15582): Illuminate\View\Engines\CompilerEngine->get('F:\\xampp\\htdocs...', Array)
+#3 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(15570): Illuminate\View\View->getContents()
+#4 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(15554): Illuminate\View\View->renderContents()
+#5 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(16827): Illuminate\View\View->render()
+#6 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(16314): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(8509): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(8355): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10177): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#11 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10069): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#12 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(3312): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#14 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10069): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#15 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#16 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(13749): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#17 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10069): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#18 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#19 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(12155): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#20 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10069): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#21 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#22 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(13495): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#23 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10069): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#24 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#25 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(13432): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#26 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10069): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#27 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#28 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10054): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#29 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(8356): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#30 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(8347): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#31 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(8338): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#32 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(2575): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#33 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#34 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(3374): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#35 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10069): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#36 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#37 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(10054): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#38 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(2519): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#39 F:\xampp\htdocs\larapus\bootstrap\cache\compiled.php(2503): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#40 F:\xampp\htdocs\larapus\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#41 {main}  
+[2019-10-26 18:40:21] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method Symfony\Component\Routing\Route::get()' in F:\xampp\htdocs\larapus\routes\web.php:19
+Stack trace:
+#0 {main}  
+[2019-10-26 18:40:48] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method Symfony\Component\Routing\Route::get()' in F:\xampp\htdocs\larapus\routes\web.php:20
+Stack trace:
+#0 {main}  
+[2019-10-26 18:41:19] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method Symfony\Component\Routing\Route::get()' in F:\xampp\htdocs\larapus\routes\web.php:19
+Stack trace:
+#0 {main}  
+[2019-10-26 18:43:08] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use Symfony\Component\Routing\Route as Route because the name is already in use' in F:\xampp\htdocs\larapus\routes\web.php:18
+Stack trace:
+#0 {main}  
+[2019-10-26 18:43:23] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<<' (T_SL), expecting function (T_FUNCTION)' in F:\xampp\htdocs\larapus\app\Http\Controllers\Auth\LoginController.php:28
+Stack trace:
+#0 {main}  
+[2019-10-26 18:43:43] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<<' (T_SL), expecting function (T_FUNCTION)' in F:\xampp\htdocs\larapus\app\Http\Controllers\Auth\LoginController.php:28
+Stack trace:
+#0 {main}  
+[2019-10-26 18:44:05] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'endif' (T_ENDIF)' in F:\xampp\htdocs\larapus\storage\framework\views\b137c2bd5f527cc5cc01dab56edc7d4af417b08e.php:62
+Stack trace:
+#0 {main}  

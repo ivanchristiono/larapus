@@ -49,17 +49,11 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         @if (Auth::check())
-<<<<<<< HEAD
                             <li><a href="{{ url('/') }}">Dashboard</a></li>
                         @endif
                         @role('admin')
                             <li><a href="{{ route('authors.index') }}">Penulis</a></li>
                         @endrole
-=======
-                        <li><a href="{{ url('/home') }}">Dashboard</a></li>
-                        <li><a href="{{ route('authors.index') }}">Penulis</a></li>
-                        @endif   
->>>>>>> 501cd1329fb6f9ba98d9b38a662743cf243dbae9
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -93,11 +87,7 @@
                 </div>
             </div>
         </nav>
-<<<<<<< HEAD
     @include('layouts._flash')
-=======
-
->>>>>>> 501cd1329fb6f9ba98d9b38a662743cf243dbae9
     @yield('content')
     </div>
 

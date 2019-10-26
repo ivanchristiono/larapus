@@ -50,9 +50,11 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         <?php if(Auth::check()): ?>
-                        <li><a href="<?php echo e(url('/home')); ?>">Dashboard</a></li>
-                        <li><a href="<?php echo e(route('authors.index')); ?>">Penulis</a></li>
-                        <?php endif; ?>   
+                            <li><a href="<?php echo e(url('/')); ?>">Dashboard</a></li>
+                        <?php endif; ?>
+                        <?php if (app('laratrust')->hasRole('admin')) : ?>
+                            <li><a href="<?php echo e(route('authors.index')); ?>">Penulis</a></li>
+                        <?php endif; // app('laratrust')->hasRole ?>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -87,7 +89,7 @@
                 </div>
             </div>
         </nav>
-
+    <?php echo $__env->make('layouts._flash', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <?php echo $__env->yieldContent('content'); ?>
     </div>
 
