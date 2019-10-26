@@ -535,6 +535,7 @@ Stack trace:
 #31 F:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(117): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
 #32 F:\xampp\htdocs\larapus\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #33 {main}  
+<<<<<<< HEAD
 [2019-10-25 04:11:05] production.ERROR: exception 'RuntimeException' with message 'The only supported ciphers are AES-128-CBC and AES-256-CBC with the correct key lengths.' in D:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Encryption\Encrypter.php:43
 Stack trace:
 #0 D:\xampp\htdocs\larapus\vendor\laravel\framework\src\Illuminate\Encryption\EncryptionServiceProvider.php(27): Illuminate\Encryption\Encrypter->__construct(NULL, 'AES-256-CBC')
@@ -2850,3 +2851,5 @@ Stack trace:
 [2019-10-26 08:53:17] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Method Illuminate\View\View::__toString() must not throw an exception' in D:\xampp\htdocs\larapus\vendor\yajra\laravel-datatables-oracle\src\Helper.php:0
 Stack trace:
 #0 {main}  
+=======
+>>>>>>> 501cd1329fb6f9ba98d9b38a662743cf243dbae9

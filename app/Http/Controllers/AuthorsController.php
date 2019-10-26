@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Session;
+=======
+>>>>>>> 501cd1329fb6f9ba98d9b38a662743cf243dbae9
 
 use App\Author;
 use Yajra\Datatables\Html\Builder;
@@ -29,6 +32,7 @@ class AuthorsController extends Controller
     {
         if ($request->ajax()) {
             $authors = Author::select(['id', 'name']);
+<<<<<<< HEAD
             //return Datatables::of($authors)->make(true);
 
             return Datatables::of($authors)
@@ -45,6 +49,13 @@ class AuthorsController extends Controller
         //->addColumn(['data' => 'name', 'name'=>'name', 'title'=>'Nama']);
             ->addColumn(['data' => 'name', 'name'=>'name', 'title'=>'Nama'])
             ->addColumn(['data' => 'action', 'name'=>'action', 'title'=>'', 'orderable'=>false, 'searchable'=>false]);
+=======
+            return Datatables::of($authors)->make(true);
+        }
+
+        $html = $htmlBuilder
+        ->addColumn(['data' => 'name', 'name'=>'name', 'title'=>'Nama']);
+>>>>>>> 501cd1329fb6f9ba98d9b38a662743cf243dbae9
         
         return view('authors.index')->with(compact('html'));
     }
@@ -57,7 +68,10 @@ class AuthorsController extends Controller
     public function create()
     {
         //App\Author::create(['name'=>'Aam Amiruddin']);
+<<<<<<< HEAD
         return view('authors.create');
+=======
+>>>>>>> 501cd1329fb6f9ba98d9b38a662743cf243dbae9
     }
 
     /**
@@ -68,6 +82,7 @@ class AuthorsController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
         $this->validate($request, ['name' => 'required|unique:authors']);
         //$author = Author::create($request->all());
         $author = Author::create($request->only('name'));
@@ -78,6 +93,9 @@ class AuthorsController extends Controller
         return redirect()->route('authors.index');
 
         
+=======
+        //
+>>>>>>> 501cd1329fb6f9ba98d9b38a662743cf243dbae9
     }
 
     /**
@@ -99,8 +117,12 @@ class AuthorsController extends Controller
      */
     public function edit($id)
     {
+<<<<<<< HEAD
         $author = Author::find($id);
         return view('authors.edit')->with(compact('author'));
+=======
+        //
+>>>>>>> 501cd1329fb6f9ba98d9b38a662743cf243dbae9
     }
 
     /**
@@ -114,6 +136,7 @@ class AuthorsController extends Controller
     {
         //$author = App\Author::find(1);
         //$author->update(['name'=>'Salim A Fillah']);
+<<<<<<< HEAD
 
         $this->validate($request, ['name' => 'required|unique:authors,name,'. $id]);
         $author = Author::find($id);
@@ -123,6 +146,8 @@ class AuthorsController extends Controller
         "message"=>"Berhasil Mengubah $author->name"
         ]);
         return redirect()->route('authors.index');
+=======
+>>>>>>> 501cd1329fb6f9ba98d9b38a662743cf243dbae9
     }
 
     /**
@@ -132,6 +157,7 @@ class AuthorsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
+<<<<<<< HEAD
     {   
         $author = Author::find($id);
         Author::destroy($id);
@@ -141,5 +167,9 @@ class AuthorsController extends Controller
             ]);
 
         return redirect()->route('authors.index');
+=======
+    {
+        //
+>>>>>>> 501cd1329fb6f9ba98d9b38a662743cf243dbae9
     }
 }

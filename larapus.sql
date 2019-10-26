@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Oct 26, 2019 at 11:07 AM
+=======
+-- Generation Time: Oct 24, 2019 at 07:14 PM
+>>>>>>> 501cd1329fb6f9ba98d9b38a662743cf243dbae9
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -42,12 +46,16 @@ CREATE TABLE `authors` (
 INSERT INTO `authors` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (1, 'Mohammad Fauzil Adhim', '2019-10-24 09:14:38', '2019-10-24 09:14:38'),
 (2, 'Salim A. Fillah', '2019-10-24 09:14:38', '2019-10-24 09:14:38'),
+<<<<<<< HEAD
 (3, 'Aam Amiruddin', '2019-10-24 09:14:38', '2019-10-24 09:14:38'),
 (4, 'Ivan Christiono Suharnoko', '2019-10-26 00:12:21', '2019-10-26 00:12:21'),
 (6, 'Gledis Emanuela Suharnoko', '2019-10-26 00:18:37', '2019-10-26 02:03:07'),
 (9, 'Jerry Abdul Khoir', '2019-10-26 01:10:30', '2019-10-26 01:33:56'),
 (11, 'Dony purwanto', '2019-10-26 01:34:24', '2019-10-26 01:34:24'),
 (12, 'Agustina Dwi Indrayanti', '2019-10-26 02:05:43', '2019-10-26 02:05:43');
+=======
+(3, 'Aam Amiruddin', '2019-10-24 09:14:38', '2019-10-24 09:14:38');
+>>>>>>> 501cd1329fb6f9ba98d9b38a662743cf243dbae9
 
 -- --------------------------------------------------------
 
@@ -199,8 +207,13 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+<<<<<<< HEAD
 (1, 'Admin Larapus', 'admin@gmail.com', '$2y$10$g.uwq.eCfXqG2DUzzN/4NeETc3SSElecsdpOzoSzG5l4BM5EhAFJG', 'GRrthS49vWh6BGUiCqoZAUPxjevTMDScD28Cj7Y1N8dyJICcBy75EIhbprtN', '2019-10-24 09:14:37', '2019-10-26 02:05:51'),
 (2, 'Sample Member', 'member@gmail.com', '$2y$10$SHraRat2.q1Csbg45sVADuZp6mPByZbtPR3TnH27kZ5SaUdTtbzMy', 'XSY0VJG2pOuEfmHnYMCYL6sn0YF6gEG4lyYdmi5H5uHJSsn9PuIlP7czo7Sp', '2019-10-24 09:14:38', '2019-10-26 02:05:21');
+=======
+(1, 'Admin Larapus', 'admin@gmail.com', '$2y$10$g.uwq.eCfXqG2DUzzN/4NeETc3SSElecsdpOzoSzG5l4BM5EhAFJG', 'QZrC7F11bGuYgQoCTeU9OIMspIQoWwq52LuCHqrhDiWfhawNQfUMOEvoj3ut', '2019-10-24 09:14:37', '2019-10-24 09:46:41'),
+(2, 'Sample Member', 'member@gmail.com', '$2y$10$SHraRat2.q1Csbg45sVADuZp6mPByZbtPR3TnH27kZ5SaUdTtbzMy', NULL, '2019-10-24 09:14:38', '2019-10-24 09:14:38');
+>>>>>>> 501cd1329fb6f9ba98d9b38a662743cf243dbae9
 
 --
 -- Indexes for dumped tables
@@ -275,7 +288,11 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `authors`
 --
 ALTER TABLE `authors`
+<<<<<<< HEAD
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+=======
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+>>>>>>> 501cd1329fb6f9ba98d9b38a662743cf243dbae9
 
 --
 -- AUTO_INCREMENT for table `books`
