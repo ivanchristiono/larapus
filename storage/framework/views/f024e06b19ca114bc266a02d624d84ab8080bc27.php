@@ -14,9 +14,9 @@
                     </div>
                     <div class="panel-body">
                         <?php echo Form::open(['url' => route('authors.store'),
-                        'method' => 'post', 'class'=>'form-horizontal']); ?>
+                            'method' => 'post', 'class'=>'form-horizontal']); ?>
 
-                        <?php echo $__env->make('authors._form', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                            <?php echo $__env->make('authors._form', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                         <?php echo Form::close(); ?>
 
                     </div>

@@ -54,6 +54,7 @@
                         <?php endif; ?>
                         <?php if (app('laratrust')->hasRole('admin')) : ?>
                             <li><a href="<?php echo e(route('authors.index')); ?>">Penulis</a></li>
+                            <li><a href="<?php echo e(route('books.index')); ?>">Buku</a></li>
                         <?php endif; // app('laratrust')->hasRole ?>
                     </ul>
 
@@ -89,6 +90,7 @@
                 </div>
             </div>
         </nav>
+
     <?php echo $__env->make('layouts._flash', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <?php echo $__env->yieldContent('content'); ?>
     </div>
@@ -100,6 +102,7 @@
     <script src= "<?php echo e(asset('/js/bootstrap.min.js')); ?>"></script>
     <script src="<?php echo e(asset('/js/jquery.dataTables.min.js')); ?>"></script>
     <script src="<?php echo e(asset('/js/dataTables.bootstrap.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('/js/custom.js')); ?>"></script>
     <?php echo $__env->yieldContent('scripts'); ?>
     
 </body>
