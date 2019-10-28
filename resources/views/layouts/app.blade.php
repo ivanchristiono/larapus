@@ -88,7 +88,10 @@
                 </div>
             </div>
         </nav>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2ce0a8de9a5be67ac2f289917fa070c51fd10575
     @include('layouts._flash')
     @yield('content')
     </div>
