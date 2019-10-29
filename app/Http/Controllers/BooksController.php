@@ -9,6 +9,8 @@ use Yajra\Datatables\Datatables;
 use App\Book;
 
 use App\Author;
+use App\Http\Requests\StoreBookRequest;
+use App\Http\Requests\UpdateBookRequest;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
@@ -61,15 +63,19 @@ class BooksController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+
+     public function store(StoreBookRequest $request)
+     {
+
+    /*public function store(Request $request)
     {
         $this->validate($request, [
             'title' => 'required|unique:books,title',
             'author_id' => 'required|exists:authors,id',
             'amount' => 'required|numeric',
             'cover' => 'image|max:2048'
-
         ]);
+        */
 
         $book = Book::create($request->except('cover'));
 
@@ -132,16 +138,8 @@ class BooksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        $this->validate($request, [
-            'title' => 'required|unique:books,title,' . $id,
-            'author_id' => 'required|exists:authors,id',
-            'amount' => 'required|numeric',
-            'cover' => 'image|max:2048'
-
-        ]);
-        
+    public function update(UpdateBookRequest $request, $id)
+    {          
         $book = Book::find($id);
         $book->update($request->all());
 
@@ -194,6 +192,26 @@ class BooksController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $book = Book::find($id);
+        $bookname = $book->title;
+
+        if($book->cover){
+            $filepath = public_path() . DIRECTORY_SEPARATOR .'img'. $book->cover;
+
+            try {
+                File::delete($filepath);
+            } catch (FileNotFoundException $e) {
+                //throw $th;
+            }
+        }
+
+        $book->delete();
+
+        Session::flash("flash_notification", [
+            "level" => "danger",
+            "message" => "Berhasil menghapus Buku " . $bookname
+        ]);
+
+        return redirect()->route('books.index');
     }
 }
