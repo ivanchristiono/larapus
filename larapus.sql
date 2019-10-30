@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2019 at 10:38 AM
+-- Generation Time: Oct 30, 2019 at 10:44 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -40,11 +40,9 @@ CREATE TABLE `authors` (
 --
 
 INSERT INTO `authors` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'Mohammad Fauzil Adhim', '2019-10-24 09:14:38', '2019-10-24 09:14:38'),
-(2, 'Salim A. Fillah', '2019-10-24 09:14:38', '2019-10-24 09:14:38'),
-(3, 'Aam Amiruddin', '2019-10-24 09:14:38', '2019-10-24 09:14:38'),
-(6, 'Gledis Emanuela Suharnoko', '2019-10-26 00:18:37', '2019-10-26 02:03:07'),
-(12, 'Ivan Christiono Suharnoko', '2019-10-27 19:48:52', '2019-10-27 19:48:52');
+(1, 'Mohammad Fauzil Adhim', '2019-10-29 23:16:43', '2019-10-29 23:16:43'),
+(2, 'Salim A. Fillah', '2019-10-29 23:16:44', '2019-10-29 23:16:44'),
+(3, 'Aam Amiruddin', '2019-10-29 23:16:44', '2019-10-29 23:16:44');
 
 -- --------------------------------------------------------
 
@@ -67,12 +65,34 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `title`, `author_id`, `amount`, `cover`, `created_at`, `updated_at`) VALUES
-(1, 'Kupinang Engkau dengan Hamdalah', 1, 3, NULL, '2019-10-24 09:14:38', '2019-10-24 09:14:38'),
-(2, 'Jalan Cinta Para Pejuang', 2, 2, 'a2f195432304c4a7dda6d0cb64dad6c7.jpeg', '2019-10-24 09:14:38', '2019-10-28 02:27:37'),
-(3, 'Membingkai Surga dalam Rumah Tangga', 3, 4, NULL, '2019-10-24 09:14:38', '2019-10-24 09:14:38'),
-(4, 'Cinta & Seks Rumah Tangga Muslim', 3, 2, '9312f1567b03cdca2810cab7c67bf001.PNG', '2019-10-24 09:14:38', '2019-10-28 02:36:13'),
-(5, 'Laravel 5 from Scratch', 12, 2, '5c4c2e28a2abe0e5cd3b4b32d60ffd45.PNG', '2019-10-28 00:14:37', '2019-10-28 00:14:38'),
-(6, 'Statistika Dasar', 6, 2, '11b861fbb590a89434ddf6db2dbb18db.PNG', '2019-10-28 00:27:55', '2019-10-28 00:27:55');
+(1, 'Kupinang Engkau dengan Hamdalah', 1, 3, NULL, '2019-10-29 23:16:44', '2019-10-29 23:16:44'),
+(2, 'Jalan Cinta Para Pejuang', 2, 2, NULL, '2019-10-29 23:16:44', '2019-10-29 23:16:44'),
+(3, 'Membingkai Surga dalam Rumah Tangga', 3, 4, NULL, '2019-10-29 23:16:44', '2019-10-29 23:16:44'),
+(4, 'Cinta & Seks Rumah Tangga Muslim', 3, 3, NULL, '2019-10-29 23:16:44', '2019-10-29 23:16:44');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `borrow_logs`
+--
+
+CREATE TABLE `borrow_logs` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `book_id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `is_returned` tinyint(1) NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `borrow_logs`
+--
+
+INSERT INTO `borrow_logs` (`id`, `book_id`, `user_id`, `is_returned`, `created_at`, `updated_at`) VALUES
+(1, 1, 2, 0, '2019-10-29 23:16:44', '2019-10-29 23:16:44'),
+(2, 2, 2, 0, '2019-10-29 23:16:44', '2019-10-29 23:16:44'),
+(3, 3, 2, 1, '2019-10-29 23:16:44', '2019-10-29 23:16:44');
 
 -- --------------------------------------------------------
 
@@ -91,11 +111,12 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(20, '2014_10_12_000000_create_users_table', 1),
-(21, '2014_10_12_100000_create_password_resets_table', 1),
-(22, '2019_10_21_162253_laratrust_setup_tables', 1),
-(23, '2019_10_24_154503_create_authors_table', 1),
-(24, '2019_10_24_154521_create_books_table', 1);
+(43, '2014_10_12_000000_create_users_table', 1),
+(44, '2014_10_12_100000_create_password_resets_table', 1),
+(45, '2019_10_21_162253_laratrust_setup_tables', 1),
+(46, '2019_10_24_154503_create_authors_table', 1),
+(47, '2019_10_24_154521_create_books_table', 1),
+(48, '2019_10_30_032933_create_borrow_logs_table', 1);
 
 -- --------------------------------------------------------
 
@@ -155,8 +176,8 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `display_name`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'Admin', NULL, '2019-10-24 09:14:37', '2019-10-24 09:14:37'),
-(2, 'member', 'Member', NULL, '2019-10-24 09:14:37', '2019-10-24 09:14:37');
+(1, 'admin', 'Admin', NULL, '2019-10-29 23:16:43', '2019-10-29 23:16:43'),
+(2, 'member', 'Member', NULL, '2019-10-29 23:16:43', '2019-10-29 23:16:43');
 
 -- --------------------------------------------------------
 
@@ -198,8 +219,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin Larapus', 'admin@gmail.com', '$2y$10$g.uwq.eCfXqG2DUzzN/4NeETc3SSElecsdpOzoSzG5l4BM5EhAFJG', 'NwZwWJ5W6Hz9rDYRIlZSwltiwS14mk2BxkBMMlri8jS1MaG4oWMJp04U2yrt', '2019-10-24 09:14:37', '2019-10-27 19:46:20'),
-(2, 'Sample Member', 'member@gmail.com', '$2y$10$SHraRat2.q1Csbg45sVADuZp6mPByZbtPR3TnH27kZ5SaUdTtbzMy', 'XSY0VJG2pOuEfmHnYMCYL6sn0YF6gEG4lyYdmi5H5uHJSsn9PuIlP7czo7Sp', '2019-10-24 09:14:38', '2019-10-26 02:05:21');
+(1, 'Admin Larapus', 'admin@gmail.com', '$2y$10$kTE2nFyGxMQ28h1sGT.BVet9DB.uHDzun68u0pxEYt0LXPSmiajSy', 'EoJp65AFRT8M5TeHSGdmMa9oZVl4XEp0ClVl1ErfUpQjI8vYqt8CTk2xJGcE', '2019-10-29 23:16:43', '2019-10-30 01:50:58'),
+(2, 'Sample Member', 'member@gmail.com', '$2y$10$g/fGOcf4469ura7dklvbTOz5rqLLEn9ASTiAUVhUIhn1WFY.iyXI2', '2xUCLtsdw4wsRegZpCiBn7PPooM2vzJo6ks7RGlDRpJ1t4kMDGD4JqX7q7r4', '2019-10-29 23:16:43', '2019-10-30 02:03:09');
 
 --
 -- Indexes for dumped tables
@@ -217,6 +238,14 @@ ALTER TABLE `authors`
 ALTER TABLE `books`
   ADD PRIMARY KEY (`id`),
   ADD KEY `books_author_id_foreign` (`author_id`);
+
+--
+-- Indexes for table `borrow_logs`
+--
+ALTER TABLE `borrow_logs`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `borrow_logs_book_id_index` (`book_id`),
+  ADD KEY `borrow_logs_user_id_index` (`user_id`);
 
 --
 -- Indexes for table `migrations`
@@ -274,19 +303,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `authors`
 --
 ALTER TABLE `authors`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `borrow_logs`
+--
+ALTER TABLE `borrow_logs`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -315,6 +350,13 @@ ALTER TABLE `users`
 --
 ALTER TABLE `books`
   ADD CONSTRAINT `books_author_id_foreign` FOREIGN KEY (`author_id`) REFERENCES `authors` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `borrow_logs`
+--
+ALTER TABLE `borrow_logs`
+  ADD CONSTRAINT `borrow_logs_book_id_foreign` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `borrow_logs_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `permission_role`
