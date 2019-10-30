@@ -633,7 +633,7 @@ class Response
     public function setDate(\DateTime $date)
     {
         $date->setTimezone(new \DateTimeZone('UTC'));
-        $this->headers->set('Date', $date->format('D, d M Y H:i:s').' GMT');
+        $this->headers->set('Date', $date->format('D, d M Y H:i:s').' GMT+7');
 
         return $this;
     }

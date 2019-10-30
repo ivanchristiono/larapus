@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Yajra\Datatables\Html\Builder;
 use Yajra\Datatables\Datatables;
 use App\Book;
+use App\BorrowLog;
+use Illuminate\Support\Facades\Auth;
 
 use App\Author;
 use App\Http\Requests\StoreBookRequest;
@@ -219,7 +221,7 @@ class BooksController extends Controller
     public function borrow($id){
         try{
             $book = Book::findOrFail($id);
-            Borrowlog::create([
+            BorrowLog::create([
                 'user_id' => Auth::user()->id,
                 'book_id' => $id
             ]);

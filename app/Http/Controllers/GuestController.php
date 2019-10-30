@@ -31,7 +31,7 @@ class GuestController extends Controller
             return Datatables::of($books)
                 ->addColumn('action', function($book){
                     if (Laratrust::hasRole('admin')) return '';
-                    return '<a class="btn btn-xs btn-primary" href="#">Pinjam</a>';
+                    return '<a class="btn btn-xs btn-primary" href="'.route('guest.books.borrow', $book->id).'">Pinjam</a>';
                 }) ->make(true);
         }
     
