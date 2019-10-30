@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 use App\Author;
+use App\Http\Requests\StoreAuthorRequest;
+use App\Http\Requests\UpdateAuthorRequest;
 use Yajra\Datatables\Html\Builder;
 use Yajra\Datatables\Datatables;
 
@@ -67,9 +69,9 @@ class AuthorsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreAuthorRequest $request)
     {
-        $this->validate($request, ['name' => 'required|unique:authors']);
+        //$this->validate($request, ['name' => 'required|unique:authors']);
         //$author = Author::create($request->all());
         $author = Author::create($request->only('name'));
         Session::flash("flash_notification", [
@@ -111,12 +113,12 @@ class AuthorsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateAuthorRequest $request, $id)
     {
         //$author = App\Author::find(1);
         //$author->update(['name'=>'Salim A Fillah']);
 
-        $this->validate($request, ['name' => 'required|unique:authors,name,'. $id]);
+        //$this->validate($request, ['name' => 'required|unique:authors,name,'. $id]);
         $author = Author::find($id);
         $author->update($request->only('name'));
         Session::flash("flash_notification", [
@@ -138,7 +140,7 @@ class AuthorsController extends Controller
         //Author::destroy($id);
         if(!Author::destroy($id)) return redirect()->back();
         Session::flash("flash_notification", [
-            "level"=>"danger",
+            "level"=>"success",
             "message"=>"Penulis $author->name berhasil dihapus"
             ]);
 

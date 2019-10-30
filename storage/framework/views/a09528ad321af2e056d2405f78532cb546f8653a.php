@@ -16,6 +16,8 @@
     <link href="<?php echo e(asset('css/fontawesome.min.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(asset('/css/jquery.dataTables.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(asset('/css/dataTables.bootstrap.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('/css/selectize.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('/css/selectize.bootstrap3.css')); ?>" rel="stylesheet">
 
 
     <!-- Scripts -->
@@ -55,6 +57,9 @@
                         <?php if (app('laratrust')->hasRole('admin')) : ?>
                             <li><a href="<?php echo e(route('authors.index')); ?>">Penulis</a></li>
                             <li><a href="<?php echo e(route('books.index')); ?>">Buku</a></li>
+                        <?php endif; // app('laratrust')->hasRole ?>
+                        <?php if (app('laratrust')->hasRole('member')) : ?>
+                            <li><a href="<?php echo e(route('guests.index')); ?>">Peminjaman</a></li>
                         <?php endif; // app('laratrust')->hasRole ?>
                     </ul>
 
@@ -102,6 +107,7 @@
     <script src="<?php echo e(asset('/js/jquery.dataTables.min.js')); ?>"></script>
     <script src="<?php echo e(asset('/js/dataTables.bootstrap.min.js')); ?>"></script>
     <script src="<?php echo e(asset('/js/custom.js')); ?>"></script>
+    <script src="<?php echo e(asset('/js/selectize.min.js')); ?>"></script>
     <?php echo $__env->yieldContent('scripts'); ?>
     
 </body>

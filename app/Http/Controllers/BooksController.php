@@ -12,6 +12,7 @@ use App\Author;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 
@@ -213,5 +214,27 @@ class BooksController extends Controller
         ]);
 
         return redirect()->route('books.index');
+    }
+
+    public function borrow($id){
+        try{
+            $book = Book::findOrFail($id);
+            Borrowlog::create([
+                'user_id' => Auth::user()->id,
+                'book_id' => $id
+            ]);
+
+            Session::flash('flash_notification', [
+                "level" => "success",
+                "message" => "Berhasil meminjam $book->title"
+            ]);
+        } catch (ModelNotFoundException $e){
+            Session::flash('flash_notification', [
+                "level" => "danger",
+                'message' => "Buku tidak ditemukan"
+            ]);
+        }
+
+        return redirect('/');
     }
 }
