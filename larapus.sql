@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2019 at 10:44 AM
+-- Generation Time: Oct 31, 2019 at 10:39 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -68,7 +68,8 @@ INSERT INTO `books` (`id`, `title`, `author_id`, `amount`, `cover`, `created_at`
 (1, 'Kupinang Engkau dengan Hamdalah', 1, 3, NULL, '2019-10-29 23:16:44', '2019-10-29 23:16:44'),
 (2, 'Jalan Cinta Para Pejuang', 2, 2, NULL, '2019-10-29 23:16:44', '2019-10-29 23:16:44'),
 (3, 'Membingkai Surga dalam Rumah Tangga', 3, 4, NULL, '2019-10-29 23:16:44', '2019-10-29 23:16:44'),
-(4, 'Cinta & Seks Rumah Tangga Muslim', 3, 3, NULL, '2019-10-29 23:16:44', '2019-10-29 23:16:44');
+(4, 'Cinta & Seks Rumah Tangga Muslim', 3, 3, NULL, '2019-10-29 23:16:44', '2019-10-29 23:16:44'),
+(5, 'Laravel 5 from Scratch', 3, 2, 'b389551d1c42e3c8ba2f3ca35428b860.jpg', '2019-10-30 19:43:59', '2019-10-30 19:43:59');
 
 -- --------------------------------------------------------
 
@@ -90,9 +91,20 @@ CREATE TABLE `borrow_logs` (
 --
 
 INSERT INTO `borrow_logs` (`id`, `book_id`, `user_id`, `is_returned`, `created_at`, `updated_at`) VALUES
-(1, 1, 2, 0, '2019-10-29 23:16:44', '2019-10-29 23:16:44'),
-(2, 2, 2, 0, '2019-10-29 23:16:44', '2019-10-29 23:16:44'),
-(3, 3, 2, 1, '2019-10-29 23:16:44', '2019-10-29 23:16:44');
+(1, 1, 2, 1, '2019-10-29 23:16:44', '2019-10-29 23:16:44'),
+(2, 2, 2, 1, '2019-10-29 23:16:44', '2019-10-31 01:33:31'),
+(3, 3, 2, 1, '2019-10-29 23:16:44', '2019-10-29 23:16:44'),
+(4, 4, 2, 1, '2019-10-30 18:50:24', '2019-10-31 01:32:51'),
+(5, 3, 2, 1, '2019-10-30 18:51:45', '2019-10-31 01:32:08'),
+(6, 5, 2, 1, '2019-10-30 19:44:14', '2019-10-31 01:26:18'),
+(7, 4, 2, 1, '2019-10-31 01:33:53', '2019-10-31 01:33:56'),
+(8, 2, 2, 1, '2019-10-31 01:34:03', '2019-10-31 01:51:48'),
+(9, 4, 2, 1, '2019-10-31 01:34:09', '2019-10-31 02:29:58'),
+(10, 1, 2, 1, '2019-10-31 01:51:53', '2019-10-31 02:29:59'),
+(11, 3, 2, 1, '2019-10-31 02:29:54', '2019-10-31 02:30:01'),
+(12, 4, 2, 1, '2019-10-31 02:30:12', '2019-10-31 02:30:19'),
+(13, 4, 2, 0, '2019-10-31 02:30:22', '2019-10-31 02:30:22'),
+(14, 2, 2, 0, '2019-10-31 02:30:24', '2019-10-31 02:30:24');
 
 -- --------------------------------------------------------
 
@@ -219,8 +231,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin Larapus', 'admin@gmail.com', '$2y$10$kTE2nFyGxMQ28h1sGT.BVet9DB.uHDzun68u0pxEYt0LXPSmiajSy', 'EoJp65AFRT8M5TeHSGdmMa9oZVl4XEp0ClVl1ErfUpQjI8vYqt8CTk2xJGcE', '2019-10-29 23:16:43', '2019-10-30 01:50:58'),
-(2, 'Sample Member', 'member@gmail.com', '$2y$10$g/fGOcf4469ura7dklvbTOz5rqLLEn9ASTiAUVhUIhn1WFY.iyXI2', '2xUCLtsdw4wsRegZpCiBn7PPooM2vzJo6ks7RGlDRpJ1t4kMDGD4JqX7q7r4', '2019-10-29 23:16:43', '2019-10-30 02:03:09');
+(1, 'Admin Larapus', 'admin@gmail.com', '$2y$10$kTE2nFyGxMQ28h1sGT.BVet9DB.uHDzun68u0pxEYt0LXPSmiajSy', 'ee2yskthpFuNmoMYtIEBNg4y5Qpa2fdHaj27ZKiufdImAAiBpMWRQxK9e1FH', '2019-10-29 23:16:43', '2019-10-30 23:27:17'),
+(2, 'Sample Member', 'member@gmail.com', '$2y$10$g/fGOcf4469ura7dklvbTOz5rqLLEn9ASTiAUVhUIhn1WFY.iyXI2', 'wjGWitBKklhjwi8gqpl9AL2lbzQyvRvyn1Ui7iHymlAYswodqpcdxL9YJhSA', '2019-10-29 23:16:43', '2019-10-31 02:30:31');
 
 --
 -- Indexes for dumped tables
@@ -309,13 +321,13 @@ ALTER TABLE `authors`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `borrow_logs`
 --
 ALTER TABLE `borrow_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `migrations`
