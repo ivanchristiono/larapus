@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Session;
 
 class Book extends Model
 {
@@ -17,9 +18,28 @@ class Book extends Model
         return $this->hasMany('App\BorrowLog');
     }
 
+    public static function boot(){
+        parent::boot();
+
+        self::updating(function($book){
+            if ($book->amount < $book->borrowed) {
+                Session::flash("flash_notification",[
+                    "level" => "danger",
+                    "message" => "Jumlah buku $book->title harus $book->borrowed "
+                ]);
+                return false;
+            }
+        });
+    } 
+
+    public function getBorrowedAttribute(){
+
+        return $this->borrowLogs()->borrowed()->count();
+    }
+
     public function getStockAttribute(){
 
-        $borrowed = $this->borrowlogs()->scopeBorrowed()->count();
+        $borrowed = $this->borrowlogs()->borrowed()->count();
         $stock = $this->amount - $borrowed;
         return $stock;
     }

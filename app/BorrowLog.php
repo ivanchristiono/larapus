@@ -19,10 +19,10 @@ class BorrowLog extends Model
     protected $casts = ['is_returned'=>'boolean'];
 
     public function scopeReturned($query){
-        return $query->where('is_returned',1);
+        return $query->where('is_returned', 1);
     }
 
     public function scopeBorrowed($query){
-        return $query->where('is_returned',0);
+        return $query->where('is_returned', 0);
     }
 }
