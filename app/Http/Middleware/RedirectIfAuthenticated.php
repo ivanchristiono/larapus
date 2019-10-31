@@ -19,6 +19,7 @@ class RedirectIfAuthenticated
     {
         if (Auth::guard($guard)->check()) {
             return redirect('/');
+           //return redirect()->route('guest.index');
         }
 
         return $next($request);

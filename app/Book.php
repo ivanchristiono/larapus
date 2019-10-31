@@ -12,4 +12,15 @@ class Book extends Model
 
         return $this->belongsTo('App\Author');
     }
+
+    public function borrowLogs(){
+        return $this->hasMany('App\BorrowLog');
+    }
+
+    public function getStockAttribute(){
+
+        $borrowed = $this->borrowlogs()->scopeBorrowed()->count();
+        $stock = $this->amount - $borrowed;
+        return $stock;
+    }
 }

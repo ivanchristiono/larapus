@@ -11,6 +11,7 @@ use App\BorrowLog;
 use Illuminate\Support\Facades\Auth;
 
 use App\Author;
+use App\Exceptions\BookException;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
@@ -221,15 +222,23 @@ class BooksController extends Controller
     public function borrow($id){
         try{
             $book = Book::findOrFail($id);
-            BorrowLog::create([
+            /*BorrowLog::create([
                 'user_id' => Auth::user()->id,
                 'book_id' => $id
-            ]);
+            ]);*/
 
-            Session::flash('flash_notification', [
+            Auth::user()->borrow($book);
+            Session::flash('flash_notification',[
                 "level" => "success",
-                "message" => "Berhasil meminjam $book->title"
+                "message" => "Berhasil meminjam buku $book->title"
             ]);
+        }
+        catch (BookException $e) {
+            Session::flash("flash_notification",[
+                "level" => "danger",
+                "message" => $e->getMessage()
+            ]);
+            
         } catch (ModelNotFoundException $e){
             Session::flash('flash_notification', [
                 "level" => "danger",
@@ -237,6 +246,25 @@ class BooksController extends Controller
             ]);
         }
 
+        return redirect('/');
+    }
+
+    public function returnBack($book_id){
+        $borrowLog = BorrowLog::where('user_id', Auth::user()->id)
+            ->where('book_id',$book_id)
+            ->where('is_returned',0)
+            ->first();
+
+        if($borrowLog){
+            $borrowLog->is_returned = true;
+            $borrowLog->save();
+
+        
+        Session::flash("flash_notification",[
+            "level" => "success",
+            "message" => "Berhasil mengembalikan ". $borrowLog->book->title
+        ]);
+        }
         return redirect('/');
     }
 }

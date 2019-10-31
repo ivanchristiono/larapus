@@ -10,9 +10,13 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+
+use Illuminate\Support\Facades\Route;
+
 Auth::routes();
 //Route::get('/', 'HomeController@index');
-Route::get('/', 'GuestController@index');
+Route::get('/', 'HomeController@index');
+Route::get('/guest', 'GuestController@index');
 Route::get('/about', 'MyController@showAbout');
 Route::get('/test', ['middleware'=>'guest', 'uses'=>'MyController@showAbout']);
 
@@ -33,4 +37,10 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth', 'role:admin']], function
     'middleware' => ['auth', 'role:member'],
     'as' => 'guest.books.borrow',
     'uses' => 'BooksController@borrow'
+]);
+
+Route::put('books/{book}/return', [
+   'middleware' => ['auth', 'role:member'],
+   'as' => 'member.books.return',
+   'uses' => 'BooksController@returnBack'
 ]);
