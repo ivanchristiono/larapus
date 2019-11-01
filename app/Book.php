@@ -30,6 +30,16 @@ class Book extends Model
                 return false;
             }
         });
+
+        self::deleting(function($book){
+            if($book->borrowLogs()->count() > 0){
+                Session::flash('flash_notification',[
+                    "level" => "danger",
+                    "message" => "Tidak dapat menghapus buku $book->title karena sudah pernah dipinjam"
+                ]);
+              return false;  
+            }
+        });
     } 
 
     public function getBorrowedAttribute(){
@@ -43,4 +53,5 @@ class Book extends Model
         $stock = $this->amount - $borrowed;
         return $stock;
     }
+
 }

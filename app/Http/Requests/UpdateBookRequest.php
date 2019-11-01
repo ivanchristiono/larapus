@@ -14,6 +14,7 @@ class UpdateBookRequest extends StoreBookRequest
     {
         $rules = parent::rules();
         $rules['title'] = 'required|unique:books,title,' . $this->route('book');
+       // $rules['amount'] = 'required|numeric|min:' . $this->route('');
         return $rules;
     }
 }

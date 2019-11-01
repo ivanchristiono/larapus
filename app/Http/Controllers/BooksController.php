@@ -199,8 +199,12 @@ class BooksController extends Controller
     {
         $book = Book::find($id);
         $bookname = $book->title;
+        $cover = $book->cover;
 
-        if($book->cover){
+        if (!$book->delete())
+        return redirect()->back();
+
+        if($cover){
             $filepath = public_path() . DIRECTORY_SEPARATOR .'img'. $book->cover;
 
             try {
@@ -209,8 +213,6 @@ class BooksController extends Controller
                 //throw $th;
             }
         }
-
-        $book->delete();
 
         Session::flash("flash_notification", [
             "level" => "danger",
