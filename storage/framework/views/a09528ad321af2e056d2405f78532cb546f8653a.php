@@ -26,6 +26,7 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <div id="app">

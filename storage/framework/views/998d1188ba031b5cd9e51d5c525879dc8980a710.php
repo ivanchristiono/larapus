@@ -47,6 +47,14 @@
 
                             </div>
                         </div>
+                        <div class="form-group<?php echo e($errors->has('g-recaptcha-response') ? ' has-error' : ''); ?>">
+                            <div class="col-md-offset-4 col-md-6">
+                            <?php echo app('captcha')->display(); ?>
+
+                            <?php echo $errors->first('g-recaptcha-response', '<p class="help-block">:message</p>'); ?>
+
+                            </div>
+                            </div>
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

@@ -4,10 +4,7 @@ namespace Psr\Log\Test;
 
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
-<<<<<<< HEAD
 use PHPUnit\Framework\TestCase;
-=======
->>>>>>> 501cd1329fb6f9ba98d9b38a662743cf243dbae9
 
 /**
  * Provides a base test class for ensuring compliance with the LoggerInterface.
@@ -15,11 +12,7 @@ use PHPUnit\Framework\TestCase;
  * Implementors can extend the class and implement abstract methods to run this
  * as part of their test suite.
  */
-<<<<<<< HEAD
 abstract class LoggerInterfaceTest extends TestCase
-=======
-abstract class LoggerInterfaceTest extends \PHPUnit_Framework_TestCase
->>>>>>> 501cd1329fb6f9ba98d9b38a662743cf243dbae9
 {
     /**
      * @return LoggerInterface
@@ -148,5 +141,6 @@ class DummyTest
 {
     public function __toString()
     {
+        return 'DummyTest';
     }
 }

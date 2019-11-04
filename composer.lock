@@ -4,26 +4,29 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d020c3c154b6a8eac4f20737d67ee500",
+    "content-hash": "e9661f3c427b55149c6a3b2651939091",
     "packages": [
         {
             "name": "anhskohbo/no-captcha",
-            "version": "2.4.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/anhskohbo/no-captcha.git",
-                "reference": "cc0bacff1bb59f518af135ee3beae39bed079724"
+                "reference": "3b2f7d461e1fc7153e0c724c3ccac7a2db156733"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/anhskohbo/no-captcha/zipball/cc0bacff1bb59f518af135ee3beae39bed079724",
-                "reference": "cc0bacff1bb59f518af135ee3beae39bed079724",
+                "url": "https://api.github.com/repos/anhskohbo/no-captcha/zipball/3b2f7d461e1fc7153e0c724c3ccac7a2db156733",
+                "reference": "3b2f7d461e1fc7153e0c724c3ccac7a2db156733",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^6.2",
-                "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
+                "illuminate/support": "^5.0|^6.0",
                 "php": ">=5.5.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
             },
             "type": "library",
             "extra": {
@@ -57,10 +60,11 @@
                 "laravel",
                 "laravel4",
                 "laravel5",
+                "laravel6",
                 "no-captcha",
                 "recaptcha"
             ],
-            "time": "2017-08-30T18:36:57+00:00"
+            "time": "2019-10-03T06:42:31+00:00"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -1444,16 +1448,16 @@
         },
         {
             "name": "psr/log",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "bf73deb2b3b896a9d9c75f3f0d88185d2faa27e2"
+                "reference": "446d54b4cb6bf489fc9d75f55843658e6f25d801"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/bf73deb2b3b896a9d9c75f3f0d88185d2faa27e2",
-                "reference": "bf73deb2b3b896a9d9c75f3f0d88185d2faa27e2",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/446d54b4cb6bf489fc9d75f55843658e6f25d801",
+                "reference": "446d54b4cb6bf489fc9d75f55843658e6f25d801",
                 "shasum": ""
             },
             "require": {
@@ -1487,7 +1491,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2019-10-25T08:06:51+00:00"
+            "time": "2019-11-01T11:05:21+00:00"
         },
         {
             "name": "psy/psysh",
@@ -1989,16 +1993,16 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v3.4.32",
+            "version": "v3.4.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "3e922c4c3430b9de624e8a285dada5e61e230959"
+                "reference": "f9031c22ec127d4a2450760f81a8677fe8a10177"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/3e922c4c3430b9de624e8a285dada5e61e230959",
-                "reference": "3e922c4c3430b9de624e8a285dada5e61e230959",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/f9031c22ec127d4a2450760f81a8677fe8a10177",
+                "reference": "f9031c22ec127d4a2450760f81a8677fe8a10177",
                 "shasum": ""
             },
             "require": {
@@ -2048,7 +2052,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2019-08-23T08:05:57+00:00"
+            "time": "2019-10-24T15:33:53+00:00"
         },
         {
             "name": "symfony/finder",

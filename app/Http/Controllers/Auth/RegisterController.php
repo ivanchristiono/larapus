@@ -6,6 +6,7 @@ use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Anhskohbo\NoCaptcha\Facades\NoCaptcha;
 
 class RegisterController extends Controller
 {
@@ -51,6 +52,7 @@ class RegisterController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'g-recaptcha-response' => 'required|captcha',
         ]);
     }
 
