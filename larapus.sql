@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 31, 2019 at 05:40 PM
+-- Generation Time: Nov 06, 2019 at 10:58 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -40,9 +40,9 @@ CREATE TABLE `authors` (
 --
 
 INSERT INTO `authors` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'Mohammad Fauzil Adhim', '2019-10-29 23:16:43', '2019-10-29 23:16:43'),
-(2, 'Salim A. Fillah', '2019-10-29 23:16:44', '2019-10-29 23:16:44'),
-(3, 'Aam Amiruddin', '2019-10-29 23:16:44', '2019-10-29 23:16:44');
+(1, 'Mohammad Fauzil Adhim', '2019-11-05 21:22:24', '2019-11-05 21:22:24'),
+(2, 'Salim A. Fillah', '2019-11-05 21:22:24', '2019-11-05 21:22:24'),
+(3, 'Aam Amiruddin', '2019-11-05 21:22:24', '2019-11-05 21:22:24');
 
 -- --------------------------------------------------------
 
@@ -65,12 +65,10 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `title`, `author_id`, `amount`, `cover`, `created_at`, `updated_at`) VALUES
-(1, 'Kupinang Engkau dengan Hamdalah', 1, 3, NULL, '2019-10-29 23:16:44', '2019-10-29 23:16:44'),
-(2, 'Jalan Cinta Para Pejuang', 2, 3, NULL, '2019-10-29 23:16:44', '2019-10-31 09:17:47'),
-(3, 'Membingkai Surga dalam Rumah Tangga', 3, 4, NULL, '2019-10-29 23:16:44', '2019-10-29 23:16:44'),
-(4, 'Cinta & Seks Rumah Tangga Muslim', 3, 10, NULL, '2019-10-29 23:16:44', '2019-10-31 09:19:17'),
-(5, 'Laravel 5 from Scratch', 3, 2, 'b389551d1c42e3c8ba2f3ca35428b860.jpg', '2019-10-30 19:43:59', '2019-10-30 19:43:59'),
-(6, 'Cara Cepat sukses', 1, 1, 'e5c75f47254a051ce2323ffb62ecfc4c.jpg', '2019-10-31 08:54:10', '2019-10-31 09:19:24');
+(1, 'Kupinang Engkau dengan Hamdalah', 1, 3, NULL, '2019-11-05 21:22:24', '2019-11-05 21:22:24'),
+(2, 'Jalan Cinta Para Pejuang', 2, 2, NULL, '2019-11-05 21:22:24', '2019-11-05 21:22:24'),
+(3, 'Membingkai Surga dalam Rumah Tangga', 3, 4, NULL, '2019-11-05 21:22:24', '2019-11-05 21:22:24'),
+(4, 'Cinta & Seks Rumah Tangga Muslim', 3, 3, NULL, '2019-11-05 21:22:24', '2019-11-05 21:22:24');
 
 -- --------------------------------------------------------
 
@@ -92,25 +90,9 @@ CREATE TABLE `borrow_logs` (
 --
 
 INSERT INTO `borrow_logs` (`id`, `book_id`, `user_id`, `is_returned`, `created_at`, `updated_at`) VALUES
-(1, 1, 2, 1, '2019-10-29 23:16:44', '2019-10-29 23:16:44'),
-(2, 2, 2, 1, '2019-10-29 23:16:44', '2019-10-31 01:33:31'),
-(3, 3, 2, 1, '2019-10-29 23:16:44', '2019-10-29 23:16:44'),
-(4, 4, 2, 1, '2019-10-30 18:50:24', '2019-10-31 01:32:51'),
-(5, 3, 2, 1, '2019-10-30 18:51:45', '2019-10-31 01:32:08'),
-(6, 5, 2, 1, '2019-10-30 19:44:14', '2019-10-31 01:26:18'),
-(7, 4, 2, 1, '2019-10-31 01:33:53', '2019-10-31 01:33:56'),
-(8, 2, 2, 1, '2019-10-31 01:34:03', '2019-10-31 01:51:48'),
-(9, 4, 2, 1, '2019-10-31 01:34:09', '2019-10-31 02:29:58'),
-(10, 1, 2, 1, '2019-10-31 01:51:53', '2019-10-31 02:29:59'),
-(11, 3, 2, 1, '2019-10-31 02:29:54', '2019-10-31 02:30:01'),
-(12, 4, 2, 1, '2019-10-31 02:30:12', '2019-10-31 02:30:19'),
-(13, 4, 2, 1, '2019-10-31 02:30:22', '2019-10-31 08:52:10'),
-(14, 2, 2, 1, '2019-10-31 02:30:24', '2019-10-31 08:52:12'),
-(15, 3, 2, 1, '2019-10-31 08:52:07', '2019-10-31 08:52:14'),
-(16, 4, 2, 1, '2019-10-31 08:52:19', '2019-10-31 08:52:48'),
-(17, 5, 2, 1, '2019-10-31 08:52:34', '2019-10-31 08:52:50'),
-(18, 4, 2, 0, '2019-10-31 09:12:51', '2019-10-31 09:12:51'),
-(19, 2, 2, 0, '2019-10-31 09:12:55', '2019-10-31 09:12:55');
+(1, 1, 2, 0, '2019-11-05 21:22:24', '2019-11-05 21:22:24'),
+(2, 2, 2, 0, '2019-11-05 21:22:24', '2019-11-05 21:22:24'),
+(3, 3, 2, 1, '2019-11-05 21:22:24', '2019-11-05 21:22:24');
 
 -- --------------------------------------------------------
 
@@ -129,12 +111,13 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(43, '2014_10_12_000000_create_users_table', 1),
-(44, '2014_10_12_100000_create_password_resets_table', 1),
-(45, '2019_10_21_162253_laratrust_setup_tables', 1),
-(46, '2019_10_24_154503_create_authors_table', 1),
-(47, '2019_10_24_154521_create_books_table', 1),
-(48, '2019_10_30_032933_create_borrow_logs_table', 1);
+(49, '2014_10_12_000000_create_users_table', 1),
+(50, '2014_10_12_100000_create_password_resets_table', 1),
+(51, '2019_10_21_162253_laratrust_setup_tables', 1),
+(52, '2019_10_24_154503_create_authors_table', 1),
+(53, '2019_10_24_154521_create_books_table', 1),
+(54, '2019_10_30_032933_create_borrow_logs_table', 1),
+(55, '2019_11_06_040251_add_verification_to_users', 1);
 
 -- --------------------------------------------------------
 
@@ -194,8 +177,8 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `display_name`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'Admin', NULL, '2019-10-29 23:16:43', '2019-10-29 23:16:43'),
-(2, 'member', 'Member', NULL, '2019-10-29 23:16:43', '2019-10-29 23:16:43');
+(1, 'admin', 'Admin', NULL, '2019-11-05 21:22:23', '2019-11-05 21:22:23'),
+(2, 'member', 'Member', NULL, '2019-11-05 21:22:24', '2019-11-05 21:22:24');
 
 -- --------------------------------------------------------
 
@@ -214,7 +197,8 @@ CREATE TABLE `role_user` (
 
 INSERT INTO `role_user` (`user_id`, `role_id`) VALUES
 (1, 1),
-(2, 2);
+(2, 2),
+(3, 2);
 
 -- --------------------------------------------------------
 
@@ -229,16 +213,19 @@ CREATE TABLE `users` (
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `verification_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `is_verified` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin Larapus', 'admin@gmail.com', '$2y$10$kTE2nFyGxMQ28h1sGT.BVet9DB.uHDzun68u0pxEYt0LXPSmiajSy', 'alpiXxkvfmmYvUFWESib64emrgd0QbpghWBgzMbiIYGkQMsLLFcO3B0IDy3l', '2019-10-29 23:16:43', '2019-10-31 08:54:18'),
-(2, 'Sample Member', 'member@gmail.com', '$2y$10$g/fGOcf4469ura7dklvbTOz5rqLLEn9ASTiAUVhUIhn1WFY.iyXI2', 'bEDg9TrxA6cYXP8W74Nq7eP9YcE9W4YgaGzBkJc0z9G5KuG5YhmuaX9Zuk2R', '2019-10-29 23:16:43', '2019-10-31 09:12:57');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `verification_token`, `is_verified`) VALUES
+(1, 'Admin Larapus', 'admin@gmail.com', '$2y$10$8Bq89l1oMtw4AU.En6.OFOcG3FLpXrBFI8N2AwW8e0B8XMUcrdQ5C', '2BXwL2X0lYEZmuTwzjiIj2ZqNGR7CH1op4DT1rWCi61DMkpFtJGAWkHHBpZC', '2019-11-05 21:22:24', '2019-11-06 01:16:12', NULL, 1),
+(2, 'Sample Member', 'member@gmail.com', '$2y$10$BIs.NEEn0lSxhOTqvXQxSuuP6r8YKcshnCf06o//kl6QIf7CFGSCq', 'm0iRmqnPYw5kG0OZyHq6xnehJJ1yUVXWnA9AuWWTg8evWRdOIuWt9KsM25OT', '2019-11-05 21:22:24', '2019-11-06 01:16:43', NULL, 1),
+(3, 'Ivan Christiono Suharnoko', 'ivan.christiono@gmail.com', '$2y$10$3XX8tTBUx7xS.L5MNNPL2.jJkhcunL6Gk0yNwB.2WB17IWaVBQSgC', 'teLO9zavT1naJbKV1SkoKew5dDvEAFLp52IinHyhZRl5vrVvvqLocdU3giDJ', '2019-11-06 02:22:26', '2019-11-06 02:55:32', 'BF5uZNei0WP7EZJUUa0Oy5qpivTynodDIzan8lE7', 1);
 
 --
 -- Indexes for dumped tables
@@ -327,19 +314,19 @@ ALTER TABLE `authors`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `borrow_logs`
 --
 ALTER TABLE `borrow_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -357,7 +344,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
