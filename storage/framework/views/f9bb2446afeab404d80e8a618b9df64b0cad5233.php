@@ -4,18 +4,18 @@
             <div class="col-md-12">
                 <ul class="breadcrumb">
                     <li><a href="<?php echo e(url('/')); ?>">Dashboard</a></li>
-                    <li><a href="<?php echo e(url('/admin/authors')); ?>">Penulis</a></li>
-                    <li class="active">Ubah Penulis</li>
+                    <li><a href="<?php echo e(url('/admin/books')); ?>">Buku</a></li>
+                    <li class="active">Ubah Buku</li>
                 </ul>
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2 class="panel-title">Ubah Penulis</h2>
+                        <h2 class="panel-title">Buku</h2>
                     </div>
                     <div class="panel-body">
-                        <?php echo Form::model($author, ['url' => route('authors.update', $author->id),
-                            'method'=>'put', 'class'=>'form-horizontal']); ?>
+                        <?php echo Form::model($book, ['url' => route('books.update', $book->id),
+                            'method'=>'put', 'files'=>'true','class'=>'form-horizontal']); ?>
 
-                            <?php echo $__env->make('authors._form', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                            <?php echo $__env->make('books._form', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                         <?php echo Form::close(); ?>
 
                     </div>

@@ -19,6 +19,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/guest', 'GuestController@index');
 Route::get('/about', 'MyController@showAbout');
 Route::get('/test', ['middleware'=>'guest', 'uses'=>'MyController@showAbout']);
+Route::get('auth/verify/{token}', 'Auth\RegisterController@verify');
 
 //Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function () {
 //  Route::resource('authors','AuthorsController');

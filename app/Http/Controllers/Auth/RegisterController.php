@@ -7,6 +7,11 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Anhskohbo\NoCaptcha\Facades\NoCaptcha;
+use App\Role;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Database\Query\Builder;
 
 class RegisterController extends Controller
 {
@@ -28,7 +33,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -38,6 +43,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $this->middleware('user-should-verified');
     }
 
     /**
@@ -68,9 +74,30 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            
         ]);
         $memberRole = Role::where('name', 'member')->first();
-        $user = attachRole($memberRole);
+        $user->attachRole($memberRole);
+        $user->sendVerification();
         return $user;
     }
+
+    public function verify(Request $request, $token) {
+
+        $email = $request->get('email');
+        $user = User::where('verification_token', $token)->where('email', $email)->first();
+        if ($user){
+            $user->is_verified=1;
+            $user->save();
+
+            Session::flash("flash_notification",[
+                "level" => "success",
+                "message" => "Akun anda Sudah aktif. Silahkan login"
+            ]);
+
+        Auth::login($user); 
+     }
+     return redirect('/');
+}
+
 }

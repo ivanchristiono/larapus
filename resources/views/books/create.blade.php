@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-12">
                 <ul class="breadcrumb">
-                    <li><a href="{{ url('/home') }}">Dashboard</a></li>
+                    <li><a href="{{ url('/') }}">Dashboard</a></li>
                     <li><a href="{{ url('/admin/books') }}">Buku</a></li>
                     <li class="active">Tambah Buku</li>
                 </ul>
