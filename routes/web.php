@@ -20,6 +20,8 @@ Route::get('/guest', 'GuestController@index');
 Route::get('/about', 'MyController@showAbout');
 Route::get('/test', ['middleware'=>'guest', 'uses'=>'MyController@showAbout']);
 Route::get('auth/verify/{token}', 'Auth\RegisterController@verify');
+Route::get('/auth/send-verification', 'Auth\RegisterController@sendVerification');
+Route::get('/settings/profile', 'SettingsController@profile');
 
 //Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function () {
 //  Route::resource('authors','AuthorsController');

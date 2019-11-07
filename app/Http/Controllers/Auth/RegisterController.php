@@ -87,8 +87,7 @@ class RegisterController extends Controller
         $email = $request->get('email');
         $user = User::where('verification_token', $token)->where('email', $email)->first();
         if ($user){
-            $user->is_verified=1;
-            $user->save();
+            $user->verify();
 
             Session::flash("flash_notification",[
                 "level" => "success",
@@ -99,5 +98,18 @@ class RegisterController extends Controller
      }
      return redirect('/');
 }
+
+    public function sendVerification(Request $request){
+        $user = User::where('email',$request->get('email'))->first();
+        if ($user && !$user->is_verified){
+            $user->sendVerification();
+
+            Session::flash("flash_notification", [
+                "level" => "success",
+                "message" => "Link aktivasi telah dikirim ulang"
+            ]);
+        }
+        return redirect('/login');
+    }
 
 }

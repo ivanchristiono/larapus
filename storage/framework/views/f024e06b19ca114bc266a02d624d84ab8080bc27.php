@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-12">
                 <ul class="breadcrumb">
-                    <li><a href="<?php echo e(url('/home')); ?>">Dashboard</a></li>
+                    <li><a href="<?php echo e(url('/')); ?>">Dashboard</a></li>
                     <li><a href="<?php echo e(url('/admin/authors')); ?>">Penulis</a></li>
                     <li class="active">Tambah Penulis</li>
                 </ul>

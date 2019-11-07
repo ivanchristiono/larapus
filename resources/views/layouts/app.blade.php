@@ -77,6 +77,11 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
+                                        @if (auth()->check())
+                                            <a href="{{ url('/settings/profile') }}">Profil</a>
+                                        @endif
+                                    </li>
+                                    <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

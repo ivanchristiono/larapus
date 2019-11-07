@@ -78,6 +78,11 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
+                                        <?php if(auth()->check()): ?>
+                                            <a href="<?php echo e(url('/settings/profile')); ?>">Profil</a>
+                                        <?php endif; ?>
+                                    </li>
+                                    <li>
                                         <a href="<?php echo e(url('/logout')); ?>"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
