@@ -13,7 +13,9 @@
     <!-- Styles -->
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
    <!-- <link href="<?php echo e(asset('css/bootstrap.min.css')); ?>" rel="stylesheet"> -->
-    <link href="<?php echo e(asset('css/fontawesome.min.css')); ?>" rel="stylesheet">
+    <!-- <link href="<?php echo e(asset('css/fontawesome.min.css')); ?>" rel="stylesheet"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?php echo e(asset('css/regular.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(asset('/css/jquery.dataTables.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(asset('/css/dataTables.bootstrap.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(asset('/css/selectize.css')); ?>" rel="stylesheet">
@@ -58,6 +60,7 @@
                         <?php if (app('laratrust')->hasRole('admin')) : ?>
                             <li><a href="<?php echo e(route('authors.index')); ?>">Penulis</a></li>
                             <li><a href="<?php echo e(route('books.index')); ?>">Buku</a></li>
+                            <li><a href="<?php echo e(route('members.index')); ?>">Member</a></li>
                         <?php endif; // app('laratrust')->hasRole ?>
                         <?php if (app('laratrust')->hasRole('member')) : ?>
                             <li><a href="<?php echo e(route('guests.index')); ?>">Peminjaman</a></li>
@@ -82,6 +85,8 @@
                                             <a href="<?php echo e(url('/settings/profile')); ?>">Profil</a>
                                         <?php endif; ?>
                                     </li>
+                                    <li>
+                                        <a href="<?php echo e(url('/settings/password')); ?>"><i class="fa fa-btn fa-lock" aria-hidden="true"></i> Ubah Password</a></li>
                                     <li>
                                         <a href="<?php echo e(url('/logout')); ?>"
                                             onclick="event.preventDefault();

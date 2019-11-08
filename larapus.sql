@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2019 at 10:58 AM
+-- Generation Time: Nov 08, 2019 at 10:46 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -42,7 +42,8 @@ CREATE TABLE `authors` (
 INSERT INTO `authors` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (1, 'Mohammad Fauzil Adhim', '2019-11-05 21:22:24', '2019-11-05 21:22:24'),
 (2, 'Salim A. Fillah', '2019-11-05 21:22:24', '2019-11-05 21:22:24'),
-(3, 'Aam Amiruddin', '2019-11-05 21:22:24', '2019-11-05 21:22:24');
+(3, 'Aam Amiruddin', '2019-11-05 21:22:24', '2019-11-05 21:22:24'),
+(4, 'Renaldi Budi', '2019-11-07 01:41:52', '2019-11-07 01:41:52');
 
 -- --------------------------------------------------------
 
@@ -68,7 +69,8 @@ INSERT INTO `books` (`id`, `title`, `author_id`, `amount`, `cover`, `created_at`
 (1, 'Kupinang Engkau dengan Hamdalah', 1, 3, NULL, '2019-11-05 21:22:24', '2019-11-05 21:22:24'),
 (2, 'Jalan Cinta Para Pejuang', 2, 2, NULL, '2019-11-05 21:22:24', '2019-11-05 21:22:24'),
 (3, 'Membingkai Surga dalam Rumah Tangga', 3, 4, NULL, '2019-11-05 21:22:24', '2019-11-05 21:22:24'),
-(4, 'Cinta & Seks Rumah Tangga Muslim', 3, 3, NULL, '2019-11-05 21:22:24', '2019-11-05 21:22:24');
+(4, 'Cinta & Seks Rumah Tangga Muslim', 3, 3, NULL, '2019-11-05 21:22:24', '2019-11-05 21:22:24'),
+(5, 'Desain Komunikasi Visual', 4, 1, '6aed1502b29f3244bc2deff4d7d16323.PNG', '2019-11-07 01:41:31', '2019-11-07 01:42:02');
 
 -- --------------------------------------------------------
 
@@ -92,7 +94,8 @@ CREATE TABLE `borrow_logs` (
 INSERT INTO `borrow_logs` (`id`, `book_id`, `user_id`, `is_returned`, `created_at`, `updated_at`) VALUES
 (1, 1, 2, 0, '2019-11-05 21:22:24', '2019-11-05 21:22:24'),
 (2, 2, 2, 0, '2019-11-05 21:22:24', '2019-11-05 21:22:24'),
-(3, 3, 2, 1, '2019-11-05 21:22:24', '2019-11-05 21:22:24');
+(3, 3, 2, 1, '2019-11-05 21:22:24', '2019-11-05 21:22:24'),
+(4, 2, 6, 0, '2019-11-07 01:40:14', '2019-11-07 01:40:14');
 
 -- --------------------------------------------------------
 
@@ -130,6 +133,13 @@ CREATE TABLE `password_resets` (
   `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `password_resets`
+--
+
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('ivan.christiono@gmail.com', 'bd698a28035928aa5d2bda95d2b47d24468ad9ef7ee7d78961abdeeb89b38c24', '2019-11-08 02:28:49');
 
 -- --------------------------------------------------------
 
@@ -198,7 +208,7 @@ CREATE TABLE `role_user` (
 INSERT INTO `role_user` (`user_id`, `role_id`) VALUES
 (1, 1),
 (2, 2),
-(3, 2);
+(6, 2);
 
 -- --------------------------------------------------------
 
@@ -223,9 +233,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `verification_token`, `is_verified`) VALUES
-(1, 'Admin Larapus', 'admin@gmail.com', '$2y$10$8Bq89l1oMtw4AU.En6.OFOcG3FLpXrBFI8N2AwW8e0B8XMUcrdQ5C', '2BXwL2X0lYEZmuTwzjiIj2ZqNGR7CH1op4DT1rWCi61DMkpFtJGAWkHHBpZC', '2019-11-05 21:22:24', '2019-11-06 01:16:12', NULL, 1),
-(2, 'Sample Member', 'member@gmail.com', '$2y$10$BIs.NEEn0lSxhOTqvXQxSuuP6r8YKcshnCf06o//kl6QIf7CFGSCq', 'm0iRmqnPYw5kG0OZyHq6xnehJJ1yUVXWnA9AuWWTg8evWRdOIuWt9KsM25OT', '2019-11-05 21:22:24', '2019-11-06 01:16:43', NULL, 1),
-(3, 'Ivan Christiono Suharnoko', 'ivan.christiono@gmail.com', '$2y$10$3XX8tTBUx7xS.L5MNNPL2.jJkhcunL6Gk0yNwB.2WB17IWaVBQSgC', 'teLO9zavT1naJbKV1SkoKew5dDvEAFLp52IinHyhZRl5vrVvvqLocdU3giDJ', '2019-11-06 02:22:26', '2019-11-06 02:55:32', 'BF5uZNei0WP7EZJUUa0Oy5qpivTynodDIzan8lE7', 1);
+(1, 'Admin Larapus', 'admin@gmail.com', '$2y$10$kGcOjhLF.6k5boyIvzmc.OMLEJ5UAjwnncy.nNiA74C4BsaRooVr.', 'CyTfdyeqpHKYfw955spq2u3ojLKm4vzgn1qqMixV8nmSjuWWKhnTd6nLwNDA', '2019-11-05 21:22:24', '2019-11-08 02:24:26', NULL, 1),
+(2, 'Sample Member', 'member@gmail.com', '$2y$10$BIs.NEEn0lSxhOTqvXQxSuuP6r8YKcshnCf06o//kl6QIf7CFGSCq', '7mRdmj6bDXQuoK5nIrreiCAIklxVaXufYXS19UafaPH2nl1X2beUC1uxoOwA', '2019-11-05 21:22:24', '2019-11-08 02:24:39', NULL, 1),
+(6, 'renaldi budi', 'ivan.christiono@gmail.com', '$2y$10$T4c/Dam4TndNqYGrrXJkE.jm6/pctC5HzCVltl1TQBhZBbSbfrUcW', '34rn8ZdHuB92C0ol5zXMEhEuGm3XGUfClevCSZVfVjzro1e1PhBxl2LyiKxk', '2019-11-07 01:39:42', '2019-11-07 01:40:34', NULL, 1);
 
 --
 -- Indexes for dumped tables
@@ -308,19 +318,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `authors`
 --
 ALTER TABLE `authors`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `borrow_logs`
 --
 ALTER TABLE `borrow_logs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -344,7 +354,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

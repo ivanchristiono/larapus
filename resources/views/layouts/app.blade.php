@@ -13,7 +13,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
    <!-- <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"> -->
-    <link href="{{ asset('css/fontawesome.min.css') }}" rel="stylesheet">
+    <!-- <link href="{{ asset('css/fontawesome.min.css') }}" rel="stylesheet"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ asset('css/regular.css') }}" rel="stylesheet">
     <link href="{{asset('/css/jquery.dataTables.css')}}" rel="stylesheet">
     <link href="{{asset('/css/dataTables.bootstrap.css')}}" rel="stylesheet">
     <link href="{{asset('/css/selectize.css')}}" rel="stylesheet">
@@ -57,6 +59,7 @@
                         @role('admin')
                             <li><a href="{{ route('authors.index') }}">Penulis</a></li>
                             <li><a href="{{ route('books.index') }}">Buku</a></li>
+                            <li><a href="{{ route('members.index') }}">Member</a></li>
                         @endrole
                         @role('member')
                             <li><a href="{{ route('guests.index') }}">Peminjaman</a></li>
@@ -81,6 +84,8 @@
                                             <a href="{{ url('/settings/profile') }}">Profil</a>
                                         @endif
                                     </li>
+                                    <li>
+                                        <a href="{{ url('/settings/password') }}"><i class="fa fa-btn fa-lock" aria-hidden="true"></i> Ubah Password</a></li>
                                     <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
