@@ -8,6 +8,12 @@ use App\Role;
 use App\User;
 use Yajra\Datatables\Html\Builder;
 use Yajra\Datatables\Datatables;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
+use App\Http\Requests\StoreMemberRequest;
+use App\Http\Requests\UpdateMemberRequest;
+use App\BorrowLog;
+use Psy\Exception\ErrorException;
 
 class MembersController extends Controller
 {
@@ -21,6 +27,9 @@ class MembersController extends Controller
         if ($request->ajax()){
             $members = Role::where('name','member')->first()->users;
             return Datatables::of($members)
+            ->addColumn('name', function($member){
+                return '<a href="'.route('members.show', $member->id).'">'.$member->name.'</a>';
+            })
                 ->addColumn('action', function($member){
                     return view ('datatable._action', [
                         'model'             => $member,
@@ -45,7 +54,7 @@ class MembersController extends Controller
      */
     public function create()
     {
-        //
+        // pake modal
     }
 
     /**
@@ -54,9 +63,40 @@ class MembersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreMemberRequest $request)
     {
-        //
+        $password = str_random(6);
+        $data = $request->all();
+        $data['password'] = bcrypt($password);
+        //bypass verifikasi
+        $data['is_verified'] = 1;
+
+        $member = User::create($data);
+        
+        //set role
+        $memberRole = Role::where('name', 'member')->first();
+        $member->attachRole($memberRole);
+
+        //kirim email
+        try {
+            Mail::send('auth.emails.invite', compact('member','password'), function ($m) use ($member){
+                $m->to($member->email, $member->name)->subject('Anda Telah terdaftar menjadi Member Larapus');
+            });  
+            
+            Session::flash("flash_notification", [
+                "level" => "success",
+                "message" => "Berhasil menyimpan ". $member->name . " dengan email ". $member->email . "dan password " . $password
+            ]);
+
+        } catch (\Exception $e) {
+            Session::flash("flash_notification", [
+                "level" => "warning",
+                "message" => "MEMBER ". $member->name."| Password : ".$password. " BERHASIL DIBUAT | Tetapi EMAIL VERIFIKASI tidak berhasil TERKIRIM "
+            ]);
+        }
+      
+    return redirect()->route('members.index');
+
     }
 
     /**
@@ -67,7 +107,8 @@ class MembersController extends Controller
      */
     public function show($id)
     {
-        //
+        $member = User::find($id);
+        return view ('members.show')->with(compact('member'));
     }
 
     /**
@@ -78,7 +119,9 @@ class MembersController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $member = User::find($id);
+        return view('members.edit')->with(compact('member'));
     }
 
     /**
@@ -88,9 +131,17 @@ class MembersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateMemberRequest $request, $id)
     {
-        //
+        $member = User::find($id);
+        $member->update($request->only('name', 'email'));
+
+        Session::flash("flash_notification",[
+            "level" => "success",
+            "message" => "Berhasil mengubah data Member"
+            ]);
+
+            return redirect()->route("members.index");
     }
 
     /**
@@ -101,6 +152,24 @@ class MembersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $member = User::find($id);
+      
+        if ($member->hasRole('member') && $member->borrowLogs()->borrowed()->count() > 0 ) {
+            Session::flash("flash_notification", [
+                "level" => "danger",
+                "message" => " GAGAL HAPUS | Member ". $member->name ." masih mempunyai pinjaman buku" 
+            ]);
+        }
+        else {
+            $member->delete();
+
+            Session::flash("flash_notification", [
+                "level" => "success",
+                "message" => "Berhasil menghapus member ". $member->name
+                ]);
+        }
+
+        return redirect()->route('members.index');
+
     }
 }

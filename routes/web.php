@@ -35,6 +35,10 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth', 'role:admin']], function
     Route::resource('authors','AuthorsController');
     Route::resource('books','BooksController');
     Route::resource('members', 'MembersController');
+    Route::get('statistics', [
+       'as' => 'statistics.index',
+       'uses' => 'statisticsController@index'
+    ]);
  });
 
  Route::group(['prefix'=>'member', 'middleware'=>['auth', 'role:member']], function () {
